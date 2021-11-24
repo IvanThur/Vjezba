@@ -88,25 +88,50 @@ select * from osoba where sifra between 5 and 15;
 ##### baza knjiznica
 # odaberite sve autore za koje ne znamo datum rođenja
 
+select * from autor where datumrodenja is null;
+
 # Unesite sebe kao autora
 
+(20775,'Ivan','Thür','2000-03-15');
+
 # odaberite autore koji su rođeni na Vaš datum rođenja
+
+select * from autor where datumrodenja like '%03-15%';
+
 # uključujući i godinu
+
+select * from autor where datumrodenja like '2000-03-15%';
 
 # odaberite autore koji se zovu kao Vi
 
+select * from autor where ime like '%ivan' or ime like 'ivan-%';
+
 # odaberite sve izdavače koji su 
 # društva s ograničenom odgovornošću
+
+select * from izdavac where naziv like '%d.o.o%';
 
 
 ##### baza world
 # odaberite sve zemlje iz Europe
 
+select * from country;
+
+select * from country where Continent='Europe';
+
 # unesite mjesto Donji Miholjac
+
+insert into city(id,name,CountryCode,District,Population) values
+(4080,'Donji Miholjac','HRV','Osijek-Baranja',9491);
 
 # Promjenite Donji Miholjac u Špičkovinu
 
+update  city set name = 'Spickovina' where id='4080';
+
 # Obrišite mjesto Špičkovina
+
+
+delete from city where name = 'Spickovina';
 
 
 
