@@ -122,19 +122,4 @@ select a.vesta, a.asocijalno from decko a
 inner join decko_zarucnica b on b.decko=a.sifra
 where a.sifra not in (select decko from decko_zarucnica);
 
-
-
-
-
-
-
-
-
-
-
-
-
-# select a.vesta,a.asocijalno from decko a 
-nner join decko_zarucnica b on b.decko=a.sifra 
-where a.sifra not in (select decko from decko_zarucnica where decko is not null);
-
+*/
