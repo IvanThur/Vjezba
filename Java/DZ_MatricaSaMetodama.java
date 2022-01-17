@@ -70,16 +70,16 @@ public class DZ_MatricaSaMetodama {
 		n = Integer.parseInt(JOptionPane.showInputDialog("Unesi broj redaka"));
 		m = Integer.parseInt(JOptionPane.showInputDialog("Unesi broj stupaca"));
 		int[][][] niz = new int[n][m][7];
-		niz[0][0][1] = mini;
-		niz[0][0][2] = n - 1;
-		niz[0][0][3] = minj;
-		niz[0][0][4] = m - 1;
-		niz[0][0][5] = k;
-		niz[0][0][6] = n * m;
+		niz[0][0][1] = mini;	//Spremanje minimalne vrijednosti reda u 3-D niz
+		niz[0][0][2] = n - 1;	//Spremanje maksimalne vrijednosti reda u 3-D niz
+		niz[0][0][3] = minj;	//Spremanje minimalne vrijednosti stupca u 3-D niz
+		niz[0][0][4] = m - 1;	//Spremanje maksimalne vrijednosti stupca u 3-D niz
+		niz[0][0][5] = k;		//Spremanje brojača u 3-D niz
+		niz[0][0][6] = n * m;	//Spremanje maksimalne vrijednosti brojača u 3-D niz
 		int i = 0, j = 0;
 		while (k <= n * m) {
 			mini = niz[0][0][1];
-			maxi = niz[0][0][2];
+			maxi = niz[0][0][2];	//Inicijalizacija vrijednosti radi lakseg razumjevanja
 			minj = niz[0][0][3];
 			maxj = niz[0][0][4];
 			k = niz[0][0][5];
@@ -92,7 +92,6 @@ public class DZ_MatricaSaMetodama {
 			minj = niz[0][0][3];
 			maxj = niz[0][0][4];
 			k = niz[0][0][5];
-			System.out.println("Lijevo" + k);
 
 			niz = gore(maxi, mini, minj, k, niz);
 			niz[0][0][3]++;
@@ -102,7 +101,6 @@ public class DZ_MatricaSaMetodama {
 			minj = niz[0][0][3];
 			maxj = niz[0][0][4];
 			k = niz[0][0][5];
-			System.out.println("gore" + k);
 
 			niz = desno(mini, minj, maxj, k, niz);
 			niz[0][0][1]++;
@@ -112,7 +110,6 @@ public class DZ_MatricaSaMetodama {
 			minj = niz[0][0][3];
 			maxj = niz[0][0][4];
 			k = niz[0][0][5];
-			System.out.println("desno" + k);
 
 			niz = dole(mini, maxi, maxj, k, niz);
 			niz[0][0][4]--;
